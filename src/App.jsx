@@ -46,7 +46,7 @@ export default function App() {
   }, []);
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="md">
       <Typography variant="h4" gutterBottom>
         h1. Heading
       </Typography>
