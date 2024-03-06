@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from './firebase';
 import { collection, getDocs } from 'firebase/firestore';
 import { DataGrid } from '@mui/x-data-grid';
-import { Container, Typography } from '@mui/material';
+import { Container, Typography, Card, CardContent } from '@mui/material';
 
 // Define the columns for the DataGrid
 const columns = [
@@ -46,10 +46,20 @@ export default function App() {
   }, []);
 
   return (
-    <Container maxWidth="md">
+    <Container maxWidth="md" sx={{ mt: 4 }}>
       <Typography variant="h4" gutterBottom>
-        h1. Heading
+        Debt Tracker
       </Typography>
+      <Card sx={{ mb: 4, maxWidth: 345 }}> {/* Apply margin bottom */}
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="div">
+            Total Debt <small>including interest</small>
+          </Typography>
+          <Typography variant="h4">
+            $200
+          </Typography>
+        </CardContent>
+      </Card>
       <DataGrid
         rows={debts}
         columns={columns}
